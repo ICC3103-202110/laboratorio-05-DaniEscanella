@@ -15,7 +15,7 @@ async function app(state, update, view){
     if (billAmount==0) {
         return console.log()
     } else {
-        const updateModel = update(billAmount,tipPercent.toFixed(2),model)
+        const updateModel = update(billAmount,tipPercent,model)
         state = {
             ...state,
             model : updateModel,

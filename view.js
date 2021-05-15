@@ -31,6 +31,7 @@ function getTable(model){
 function inputForm(model){
     const{billAmount} = model
     const {tipPercent} = model
+    console.log('Choose 0 to quit')
     const message1 = 'Bill Amount?'
     const message2 = 'Tip(%)?'
     return inquirer.prompt([
@@ -38,7 +39,7 @@ function inputForm(model){
             name: 'billAmount',
             type: 'number',
             message: message1,
-            default: 100,
+            default: billAmount,
             validate: function(value){
                 if(value >= 0){
                     return true
@@ -51,7 +52,7 @@ function inputForm(model){
             name: 'tipPercent',
             type: 'number',
             message: message2,
-            default: 10,
+            default: tipPercent,
             validate: function(value){
                 if(value >= 0){
                     return true
